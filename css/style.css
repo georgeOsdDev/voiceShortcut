@@ -1,0 +1,30 @@
+/* ===== Primary Styles ========================================================
+   Author:Oshida.Takeharu
+   Version:1.0
+   ========================================================================== */
+
+@charset "UTF-8";
+
+/*****
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}*****/
+
+
+section {
+  padding-top: 0px;
+}
+
+
+#cmd{
+  background-image : url(../img/microphone.png);
+  background-position : right;
+  background-repeat : no-repeat;
+}
+
+@media (max-width: 480px) {
+  .modal.fade.in {
+    top: 0%;
+  }
+}

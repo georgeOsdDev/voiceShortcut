@@ -1,0 +1,223 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ja"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Voice Shortcut</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="keywords" content="Siri,siri,launcher,ランチャー,ランチャ,Voice,音声,ショートカット,shortcut">
+	<meta name="description" content="Siri音声ショートカット" />	
+	<meta name="author" content="Oshida.Takeharu">
+	<meta name="copyright" content="Copyright 2012 VoiceShortcut">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<!-- icons -->
+	<link rel="shortcut icon" href="img/icon/favicon.ico"/>
+	<link rel="apple-touch-icon" href="img/icon/apple-touch-icon.png"/>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+	<!-- Design from http://twitter.github.com/bootstrap/ and http://bootswatch.com/
+	================================================== -->
+	<link rel="stylesheet" href="css/bootstrap_spacelab.css">
+	<link rel="stylesheet" href="css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="css/docs.css" >
+	
+	<!-- a little bit more style
+	================================================== -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- jquery,modernizr
+	================================================== -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+ 
+<body>
+	<!-- Navbar
+	================================================== -->
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a class="brand" href="#" rel="tooltip" title="You can exec some command<br>by Your Voice">Voice Shortcut<i class="icon-share-alt"></i></a>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li class="active"><a href="#"><i class="icon-home"></i>Home</a></li>
+						<li class=""><a href="#aboutModal" data-toggle="modal"><i class="icon-info-sign"></i>About</a></li>
+						<li class=""><a href="#helpModal" data-toggle="modal"><i class="icon-question-sign"></i>Help</a></li>
+						<li class=""><a href="http://github.com/georgeOsdDev/voiceSortcut" target="_blank"><img src="img/github-16px.png">github</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Container
+	================================================== -->
+    <div class="container">
+
+
+		<!-- Masthead
+		================================================== -->
+		<header class="jumbotron subhead" id="overview">
+			<h3>Voice Shortcut</h3>
+			<p class="lead">Talk and Execute Command.</p>
+		</header>
+
+		<!-- Forms
+		================================================== -->
+		<section id="forms">
+			<div class="page-header">
+			</div>
+
+			<div class="row">
+				<div class="span7">		
+					<form class="form-horizontal well" id="cmdForm" onsubmit="browserSubmit();return false;">
+						<fieldset>
+							<div class="control-group">
+								<label class="control-label" for="input01">Voice input</label>
+								<div class="controls">
+									<input class="input-medium search-query" type="text" id="cmd" name="cmd" value="" placeholder="何する？" autofocus />
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="lang">Language</label>
+								<div class="controls">
+									<select id="lang">
+										<option value='ja'>日本語</option>
+										<option value='en'>English</option>
+									</select>
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="twitterClient">Twitter Client</label>
+								<div class="controls">
+									<select id="twitterClient">
+										<option value='tweetie'>Tweetie</option>
+										<option value='echofon'>Echofon</option>
+										<option value='online'>twitter.com</option>
+									</select>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+			<!-- AddThis Button  http://www.addthis.com/
+			================================================== -->
+			<div class="addthis_toolbox addthis_default_style ">
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_compact"></a>
+			</div>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f6378c46f6668f9"></script>
+
+
+		</section>
+<br><br><br><br>
+
+		<!-- Footer
+		================================================== -->
+		<footer class="footer">
+			&copy; 2012 VoiceShortcut <br>
+			<p class="pull-right"><a href="#">Back to top</a></p>
+		</footer>
+
+	</div><!-- /container -->
+
+	<!-- Modal Dialogue
+	================================================== -->
+	<div class="modal hide fade" id="aboutModal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>ABOUT</h3>
+		</div>
+		<div class="modal-body" id="about_body">
+			<p>Siriの機能を使って音声ショートカットを実現します。</p>
+			<p>何ができるか知りたければ「ヘルプ」と言ってください。</p>
+			<p>実装は<a href="http://sirilauncher.com/" target="_blank">sirilauncher</a>を参考にさせていただきました。</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" onclick="$('#aboutModal').modal('hide')">Close</a>
+		</div>
+	</div>
+
+	<div class="modal hide fade" id="helpModal">
+		<div class="modal-header">
+			<a class="close" data-dismiss="modal">×</a>
+			<h3>HELP</h3>
+		</div>
+		<div class="modal-body" id="help_body">
+			<h3>Command List</h3>
+			<dl>
+			<dt>「○○○」。</em></dt>
+			<dd>指定したクライアントでツイートします。最後に読点「。」まるを入れるのが重要。<br>Siriには「まる」と言えば通じます。</dd>
+			<dt>フェイスブック、facebook</dt>
+			<dd>フェイスブックアプリを開きます。</dd>
+			<dt>再生、music</dt>
+			<dd>ipodを開きます。</dd>
+			<dt>エスエムエス、sms</dt>
+			<dd>smsを開きます</dd>
+			<dt>ライン、LINE</dt>
+			<dd>LINEのアプリを開きます。</dd>
+			<dt>リマインダー</dt>
+			<dd>リマインダーを開きます。</dd>
+			<dt>ヘルプ</dt>
+			<dd>このモーダルを開きます。</dd>
+			<dt>HTML</dt>
+			<dd>htmlソースを表示します。</dd>
+			</dl>
+			<hr>
+			<dl>
+			<dt>siriruncherさんのコマンドも使えます。</dt>
+			<dd>sirilauncher/ヘルプ ：<a href="http://sirilauncher.com/help.html" target="_blank">http://sirilauncher.com/help.html</a></dd>
+			</dl>
+			<hr>
+			<dl>
+			<dt>and,One More Thing</dt>
+			<dd>See & Fork at <a href="http://github.com/georgeOsdDev/voiceShortcut" target="_blank">github</a>  <img src='img/github-16px.png'></dd>
+			</dl>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" onclick="$('#helpModal').modal('hide')">Close</a>
+		</div>
+	</div><!-- /Modal -->
+	
+	
+<!-- JavaScript Library 
+================================================== -->
+<script src="js/libs/bootstrap/bootstrap-transition.js"></script>
+<script src="js/libs/bootstrap/bootstrap-collapse.js"></script>
+<script src="js/libs/bootstrap/bootstrap-modal.js"></script>
+<script src="js/libs/bootstrap/bootstrap-tooltip.js"></script>
+<script src="js/libs/bootstrap/application.js"></script>
+
+<!-- scripts for voice shortcut
+================================================== -->
+<script src="js/commands.js"></script>
+<script src="js/detectBrowser.js"></script>
+<script src="js/voiceShortcut.js"></script>
+
+<!-- GoogleAnalytics
+================================================== -->
+<!--script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script-->
+
+</body>
+</html>
